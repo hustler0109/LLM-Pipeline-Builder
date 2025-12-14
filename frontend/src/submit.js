@@ -6,20 +6,26 @@ export const SubmitButton = () => {
 
   const handleSubmit = async () => {
     try {
-    //  const response = await fetch("http://127.0.0.1:8000/pipelines/parse", {
-      const response = await fetch("https://vectorshift-backend.up.railway.app/pipelines/parse", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nodes: nodes.map((n) => ({ id: n.id })),
-          edges: edges.map((e) => ({
-            source: e.source,
-            target: e.target,
-          })),
-        }),
-      });
+      const response = await fetch(
+        "https://vectorshift-asgt-production.up.railway.app/pipelines/parse",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nodes: nodes.map((n) => ({ id: n.id })),
+            edges: edges.map((e) => ({
+              source: e.source,
+              target: e.target,
+            })),
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Backend request failed");
+      }
 
       const result = await response.json();
 
@@ -30,8 +36,10 @@ export const SubmitButton = () => {
           `Is DAG: ${result.is_dag ? "Yes ✅" : "No ❌"}`
       );
     } catch (error) {
-      alert("Failed to submit pipeline. Make sure backend is running.");
       console.error(error);
+      alert(
+        "Failed to submit pipeline.\nPlease check backend deployment and try again."
+      );
     }
   };
 
