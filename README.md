@@ -90,7 +90,6 @@ This guarantees:
 ## 🧩 Component Responsibility Breakdown
 
 [ UI Layer ]
-↓
 
 Node creation
 
@@ -99,7 +98,6 @@ Edge connections
 User interactions
 
 [ State Management ]
-↓
 
 Store nodes
 
@@ -108,14 +106,12 @@ Store edges
 Track graph updates
 
 [ Graph Logic ]
-↓
 
 Validate connections
 
 Enforce DAG constraints
 
 [ Validation Engine ]
-↓
 
 Cycle detection
 
@@ -183,3 +179,4 @@ AI & LLM systems
 Scalable architectures
 
 Product-driven engineering
+
