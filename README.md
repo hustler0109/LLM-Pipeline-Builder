@@ -1,4 +1,4 @@
-# VectorShift – LLM Pipeline Builder 
+# LLM Pipeline Builder 
 
 🔗 **Live Demo:** https://vector-shift-asgt.vercel.app/
 
@@ -179,4 +179,5 @@ AI & LLM systems
 Scalable architectures
 
 Product-driven engineering
+
 
