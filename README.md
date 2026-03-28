@@ -77,8 +77,6 @@ NO YES
 ↓
 [ Display Analysis ]
 
-yaml
-Copy code
 
 This guarantees:
 - No infinite loops  
